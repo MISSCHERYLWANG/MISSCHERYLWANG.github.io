@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="jingxi" /><meta name="description" content="**前言：**这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还" /><meta name="keywords" content="Hugo, blog" />
+<meta name="author" content="jingxi" /><meta name="description" content="前言： 这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还要手动h" /><meta name="keywords" content="Hugo, blog" />
 
 
 
@@ -40,22 +40,22 @@
 
 
 <meta property="og:title" content="HUGO&#43;Github&#43;Github Actions实现个人博客搭建和部署" />
-<meta property="og:description" content="**前言：**这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还" />
+<meta property="og:description" content="前言： 这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还要手动h" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://misscherylwang.github.io/post/ghpages_ci/" />
 <meta property="article:published_time" content="2020-06-23T22:59:27+08:00" />
 <meta property="article:modified_time" content="2020-06-23T22:59:27+08:00" />
 <meta itemprop="name" content="HUGO&#43;Github&#43;Github Actions实现个人博客搭建和部署">
-<meta itemprop="description" content="**前言：**这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还">
+<meta itemprop="description" content="前言： 这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还要手动h">
 <meta itemprop="datePublished" content="2020-06-23T22:59:27&#43;08:00" />
 <meta itemprop="dateModified" content="2020-06-23T22:59:27&#43;08:00" />
-<meta itemprop="wordCount" content="1435">
+<meta itemprop="wordCount" content="1431">
 
 
 
 <meta itemprop="keywords" content="GitHub Actions,CI/CD," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HUGO&#43;Github&#43;Github Actions实现个人博客搭建和部署"/>
-<meta name="twitter:description" content="**前言：**这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还"/>
+<meta name="twitter:description" content="前言： 这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还要手动h"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -152,7 +152,7 @@
   </div>
 </div>
     <div class="post-content">
-      <p>**前言：**这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还要手动<code>hugo</code>生成，然后<code>push</code>到远程。我想，确实我之前也想过这样很麻烦诶，每次写完都要手动生成最新的public文件夹，于是我就按照他发给我的教程开启了部署之路。然而谁也没想到，部署之路漫漫其修远兮，从我一个人晚上11点多弄到了凌晨1点，然后又叫铁群帮我一起弄到了🕛凌晨4点才算完成。</p>
+      <p><strong>前言：</strong> 这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还要手动<code>hugo</code>生成，然后<code>push</code>到远程。我想，确实我之前也想过这样很麻烦诶，每次写完都要手动生成最新的public文件夹，于是我就按照他发给我的教程开启了部署之路。然而谁也没想到，部署之路漫漫其修远兮，从我一个人晚上11点多弄到了凌晨1点，然后又叫铁群帮我一起弄到了🕛凌晨4点才算完成。</p>
 <h2 id="hugo搭建个人博客">HUGO搭建个人博客</h2>
 <p>首先要安装好HUGO，配置环境变量等，总之用HUGO搭建博客这个过程还是很简单的，这里不再赘述。</p>
 <h2 id="github-actions">GitHub Actions</h2>
