@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub on Jingxi&#39;s personal blog.</title>
+    <link>https://misscherylwang.github.io/categories/github/</link>
+    <description>Recent content in GitHub on Jingxi&#39;s personal blog.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Jun 2020 22:59:27 +0800</lastBuildDate>
+    
+	<atom:link href="https://misscherylwang.github.io/categories/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HUGO&#43;Github&#43;Github Actions实现个人博客搭建和部署</title>
+      <link>https://misscherylwang.github.io/post/ghpages_ci/</link>
+      <pubDate>Tue, 23 Jun 2020 22:59:27 +0800</pubDate>
+      
+      <guid>https://misscherylwang.github.io/post/ghpages_ci/</guid>
+      <description>**前言：**这还要说到昨晚铁群提议我将个人博客部署到GitHub上，他说用GitHub Actions很方便就可以部署，就不用每次写完博客还</description>
+    </item>
+    
+  </channel>
+</rss>
