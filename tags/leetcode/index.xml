@@ -6,10 +6,19 @@
     <description>Recent content in LeetCode on Jingxi&#39;s personal blog.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Jun 2020 17:41:18 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 01:00:45 +0800</lastBuildDate>
     
 	<atom:link href="https://misscherylwang.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>1482. Minimum Number of Days to Make m Bouquets-制造M束花束需要的最少天数</title>
+      <link>https://misscherylwang.github.io/post/leetcode1482/</link>
+      <pubDate>Sat, 20 Jun 2020 01:00:45 +0800</pubDate>
+      
+      <guid>https://misscherylwang.github.io/post/leetcode1482/</guid>
+      <description>问题说明 Given an integer array bloomDay, an integer m and an integer k. We need to make m bouquets. To make a bouquet, you need to use k adjacent flowers from the garden. The garden consists of n flowers, the ith flower will bloom in the bloomDay[i] and then can be used in exactly one bouquet. Return the minimum number of days you need to wait to</description>
+    </item>
     
     <item>
       <title>1277. Count Square Submatrices with All Ones-数出所有的全1方阵</title>

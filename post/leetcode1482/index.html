@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>1277. Count Square Submatrices with All Ones-数出所有的全1方阵 - Jingxi&#39;s personal blog.</title>
+  <title>1482. Minimum Number of Days to Make m Bouquets-制造M束花束需要的最少天数 - Jingxi&#39;s personal blog.</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="jingxi" /><meta name="description" content="问题描述 Given a m * n matrix of ones and zeros, return how many square submatrices have all ones. Example: Input: matrix = [ [0,1,1,1], [1,1,1,1], [0,1,1,1] ] Output: 15 从上面的栗子可以看出方形子矩阵边为1的有10个，边为2的有4个，边为3的有" /><meta name="keywords" content="Hugo, blog" />
+<meta name="author" content="jingxi" /><meta name="description" content="问题说明 Given an integer array bloomDay, an integer m and an integer k. We need to make m bouquets. To make a bouquet, you need to use k adjacent flowers from the garden. The garden consists of n flowers, the ith flower will bloom in the bloomDay[i] and then can be used in exactly one bouquet. Return the minimum number of days you need to wait to" /><meta name="keywords" content="Hugo, blog" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
-<link rel="canonical" href="https://misscherylwang.github.io/post/leetcode1277/" />
+<link rel="canonical" href="https://misscherylwang.github.io/post/leetcode1482/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,23 +39,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="1277. Count Square Submatrices with All Ones-数出所有的全1方阵" />
-<meta property="og:description" content="问题描述 Given a m * n matrix of ones and zeros, return how many square submatrices have all ones. Example: Input: matrix = [ [0,1,1,1], [1,1,1,1], [0,1,1,1] ] Output: 15 从上面的栗子可以看出方形子矩阵边为1的有10个，边为2的有4个，边为3的有" />
+<meta property="og:title" content="1482. Minimum Number of Days to Make m Bouquets-制造M束花束需要的最少天数" />
+<meta property="og:description" content="问题说明 Given an integer array bloomDay, an integer m and an integer k. We need to make m bouquets. To make a bouquet, you need to use k adjacent flowers from the garden. The garden consists of n flowers, the ith flower will bloom in the bloomDay[i] and then can be used in exactly one bouquet. Return the minimum number of days you need to wait to" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://misscherylwang.github.io/post/leetcode1277/" />
-<meta property="article:published_time" content="2020-06-19T17:41:18+08:00" />
-<meta property="article:modified_time" content="2020-06-19T17:41:18+08:00" />
-<meta itemprop="name" content="1277. Count Square Submatrices with All Ones-数出所有的全1方阵">
-<meta itemprop="description" content="问题描述 Given a m * n matrix of ones and zeros, return how many square submatrices have all ones. Example: Input: matrix = [ [0,1,1,1], [1,1,1,1], [0,1,1,1] ] Output: 15 从上面的栗子可以看出方形子矩阵边为1的有10个，边为2的有4个，边为3的有">
-<meta itemprop="datePublished" content="2020-06-19T17:41:18&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-19T17:41:18&#43;08:00" />
-<meta itemprop="wordCount" content="842">
+<meta property="og:url" content="https://misscherylwang.github.io/post/leetcode1482/" />
+<meta property="article:published_time" content="2020-06-20T01:00:45+08:00" />
+<meta property="article:modified_time" content="2020-06-20T01:00:45+08:00" />
+<meta itemprop="name" content="1482. Minimum Number of Days to Make m Bouquets-制造M束花束需要的最少天数">
+<meta itemprop="description" content="问题说明 Given an integer array bloomDay, an integer m and an integer k. We need to make m bouquets. To make a bouquet, you need to use k adjacent flowers from the garden. The garden consists of n flowers, the ith flower will bloom in the bloomDay[i] and then can be used in exactly one bouquet. Return the minimum number of days you need to wait to">
+<meta itemprop="datePublished" content="2020-06-20T01:00:45&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-20T01:00:45&#43;08:00" />
+<meta itemprop="wordCount" content="545">
 
 
 
-<meta itemprop="keywords" content="LeetCode,动规," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1277. Count Square Submatrices with All Ones-数出所有的全1方阵"/>
-<meta name="twitter:description" content="问题描述 Given a m * n matrix of ones and zeros, return how many square submatrices have all ones. Example: Input: matrix = [ [0,1,1,1], [1,1,1,1], [0,1,1,1] ] Output: 15 从上面的栗子可以看出方形子矩阵边为1的有10个，边为2的有4个，边为3的有"/>
+<meta itemprop="keywords" content="LeetCode,Binary Search," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1482. Minimum Number of Days to Make m Bouquets-制造M束花束需要的最少天数"/>
+<meta name="twitter:description" content="问题说明 Given an integer array bloomDay, an integer m and an integer k. We need to make m bouquets. To make a bouquet, you need to use k adjacent flowers from the garden. The garden consists of n flowers, the ith flower will bloom in the bloomDay[i] and then can be used in exactly one bouquet. Return the minimum number of days you need to wait to"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -122,13 +122,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">1277. Count Square Submatrices with All Ones-数出所有的全1方阵</h1>
+      <h1 class="post-title">1482. Minimum Number of Days to Make m Bouquets-制造M束花束需要的最少天数</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-06-19 </span>
+        <span class="post-time"> 2020-06-20 </span>
         <div class="post-category">
             <a href="/categories/leetcode/"> LeetCode </a>
-            <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"> 动态规划 </a>
+            <a href="/categories/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/"> 二分搜索 </a>
             </div>
         
       </div>
@@ -139,77 +139,38 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#问题描述">问题描述</a></li>
-    <li><a href="#题目分析">题目分析</a></li>
-    <li><a href="#复杂度分析">复杂度分析</a></li>
+    <li><a href="#问题说明">问题说明</a></li>
+    <li><a href="#解法">解法</a></li>
+    <li><a href="#复杂度">复杂度</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="问题描述">问题描述</h2>
+      <h2 id="问题说明">问题说明</h2>
 <blockquote>
-<p>Given a <code>m * n</code> matrix of ones and zeros, return how many <strong>square</strong> submatrices have all ones.</p>
+<p>Given an integer array <code>bloomDay</code>, an integer <code>m</code> and an integer <code>k</code>.</p>
+<p>We need to make <code>m</code> bouquets. To make a bouquet, you need to use <code>k</code> adjacent flowers from the garden.</p>
+<p>The garden consists of <code>n</code> flowers, the <code>ith</code> flower will bloom in the bloomDay[i] and then can be used in <strong>exactly one</strong> bouquet.</p>
+<p>Return <em>the minimum number of days</em> you need to wait to be able to make <code>m</code> bouquets from the garden. If it is impossible to make <code>m</code> bouquets return <strong>-1</strong>.</p>
 <blockquote>
 <p><strong>Example:</strong></p>
-<p><strong>Input:</strong> matrix =
-[
-[0,1,1,1],
-[1,1,1,1],
-[0,1,1,1]
-]</p>
-<p><strong>Output:</strong> 15</p>
+<p><strong>Input:</strong>
+A = [1,10,2,9,3,8,4,7,5,6], m = 4, k = 2</p>
+<p><strong>Output:</strong> 9</p>
 </blockquote>
 </blockquote>
-<p>从上面的栗子可以看出方形子矩阵边为1的有10个，边为2的有4个，边为3的有1个，所以一共有15个方形子矩阵。</p>
-<h2 id="题目分析">题目分析</h2>
-<p>针对这道题目，最初的想法为动态规划，用一个二维数组，<code>dp[i][j]</code>代表<code>i</code>行<code>j</code>列的矩阵（用matrix[i,j]表示）中方形子矩阵的个数。寻找动规公式，当遍历的元素为1时，可以发现<code>dp[i][j]=dp[i-1][j]+dp[i][j-1]-dp[i-1][j-1]+matrix[i,j]中以(i,j)为起点边为1、2、3直到矩阵边界所形成的元素全为1的方形矩阵</code>，因为<code>dp[i-1][j-1]</code>被多加了一次，可以理解。其中最后加的这一项是指<code>i</code>行<code>j</code>列的子矩阵以<code>(i,j)</code>这个元素向左上扩展，这样得到的满足要求的方阵个数。</p>
-<p>这样，又想这样是不是太麻烦了，因为每次都要判断向左上角扩展有几个全1方阵，那直接用<code>dp[i][j]</code>来存储这个信息，然后结果就是所有的元素之和。为了减小空间复杂度，直接用原矩阵来存储这个值。结合逻辑和实例可得，动规方程为
-$$
-dp[i][j]=
-\begin{cases}
-min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1, &amp; \text{if $matrix[i][j] == 1$} \\[2ex]
-0, &amp; \text{if $matrix[i][j] == 0$}
-\end{cases}
-$$</p>
-<p>利用栗子来看一下动规数组（下表所示），$ 1\times6+2\times3+3=15$。首先，明确<code>dp[i][j]</code>表示从第i行第j列这个元素向左上扩展，能够形成的全一方阵的个数，那么<code>dp[i][0]</code>和<code>dp[0][j]</code>和原数组对应位置元素是一样的。拿(1,1)位置举例，<code>matrix[1][1]</code>为1，那么意味着除它本身为一个边为1的方阵之外，它有更多方阵的可能，然后它周围的<code>dp[1][0],dp[0][1]和dp[0][0]</code>中<strong>最短</strong>的那个“板”就表示它能够形成几个方阵。其余元素为1的同理。那么当该位置为0时就表示不能向左上扩展形成方阵，即为0。</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">2</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">2</td>
-<td align="center">3</td>
-</tr>
-</tbody>
-</table>
-<h2 id="复杂度分析">复杂度分析</h2>
-<p>时间复杂度：$O(mn)$。需要遍历整个数组。</p>
-<p>空间复杂度：$O(1)$。只需一个存储结果的变量，可利用matrix来存储dp数据。</p>
+<p>题目给定输入的数组和两个量。数组表示第<code>i</code>朵花在第<code>bloomDay[i]</code>天开放，m表示花束的个数，k表示每个花束需要的相邻的花的朵数。拿给的例子来说明，要求4个花束，每个花束由相邻两朵花一起。如下图所示。</p>
+<p><img src="/images/lc1482-1.png" alt="image"></p>
+<p>可以看出，第6天开始出现了相邻两朵花为一个花束，直到第9天满足要求。那么最少的天数就为9。</p>
+<h2 id="解法">解法</h2>
+<p>根据提示用二分搜索法。我们可以注意到天数是这里最重要的一个概念，如果从<code>bloomDay</code>这个数组中找到开放的天数的左右边界，从这个范围内二分搜索，如果当前天未达到我们的<code>m</code>个花束的要求，那么就从当前天往右边界搜索，反之在左边界-当前天范围内搜索。</p>
+<p>还是看上面这个栗子。具体搜索过程如下图所示。</p>
+<p><img src="/images/lc1482-2.png" alt="image"></p>
+<p>判断花束个数等于几的具体过程为：设变量<code>flowers</code>和花束个数<code>bouquets</code>。遍历数组，如果<code>bloomDay[i]</code>大于等于<code>mid</code>，<code>flowers</code>加1，此时如果<code>flowers</code>等于<code>k</code>，<code>bouquets</code>加1；否则，如果<code>bloomDay[i]</code>小于<code>mid</code>，<code>flowers</code>置为0。</p>
+<h2 id="复杂度">复杂度</h2>
+<p><strong>时间复杂度：</strong> O(Nlog(max(bloomDay[i])))</p>
+<p><strong>空间复杂度：</strong> O(1)</p>
 
     </div>
 
@@ -221,7 +182,7 @@ $$</p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2020-06-19
+        2020-06-20
         
     </span>
   </p>
@@ -231,16 +192,16 @@ $$</p>
 <footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/leetcode/">LeetCode</a>
-          <a href="/tags/%E5%8A%A8%E8%A7%84/">动规</a>
+          <a href="/tags/binary-search/">Binary Search</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/leetcode1482/">
+        <a class="prev" href="/post/ghpages_ci/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">1482. Minimum Number of Days to Make m Bouquets-制造M束花束需要的最少天数</span>
+            <span class="prev-text nav-default">HUGO&#43;Github&#43;Github Actions实现个人博客搭建和部署</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/leetcode1481/">
-            <span class="next-text nav-default">1481. Least Number of Unique Integers after K Removals-K清除后的不同元素的最小个数</span>
+        <a class="next" href="/post/leetcode1277/">
+            <span class="next-text nav-default">1277. Count Square Submatrices with All Ones-数出所有的全1方阵</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
