@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>1483. Kth Ancestor of a Tree Node-一个树结点的第K个祖先 - Jingxi&#39;s personal blog.</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="jingxi" /><meta name="description" content="问题说明 You are given a tree with n nodes numbered from 0 to n-1 in the form of a parent array where parent[i] is the parent of node i. The root of the tree is node 0. Implement the function getKthAncestor(int node, int k) to return the k-th ancestor of the given node. If there is no such ancestor, return -1. The k-th ancestor of a tree" /><meta name="keywords" content="Hugo, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
+
+
+<link rel="canonical" href="https://misscherylwang.github.io/post/lc1483/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="1483. Kth Ancestor of a Tree Node-一个树结点的第K个祖先" />
+<meta property="og:description" content="问题说明 You are given a tree with n nodes numbered from 0 to n-1 in the form of a parent array where parent[i] is the parent of node i. The root of the tree is node 0. Implement the function getKthAncestor(int node, int k) to return the k-th ancestor of the given node. If there is no such ancestor, return -1. The k-th ancestor of a tree" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://misscherylwang.github.io/post/lc1483/" />
+<meta property="article:published_time" content="2020-06-25T23:46:45+08:00" />
+<meta property="article:modified_time" content="2020-06-25T23:46:45+08:00" />
+<meta itemprop="name" content="1483. Kth Ancestor of a Tree Node-一个树结点的第K个祖先">
+<meta itemprop="description" content="问题说明 You are given a tree with n nodes numbered from 0 to n-1 in the form of a parent array where parent[i] is the parent of node i. The root of the tree is node 0. Implement the function getKthAncestor(int node, int k) to return the k-th ancestor of the given node. If there is no such ancestor, return -1. The k-th ancestor of a tree">
+<meta itemprop="datePublished" content="2020-06-25T23:46:45&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-25T23:46:45&#43;08:00" />
+<meta itemprop="wordCount" content="634">
+
+
+
+<meta itemprop="keywords" content="LeetCode,," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1483. Kth Ancestor of a Tree Node-一个树结点的第K个祖先"/>
+<meta name="twitter:description" content="问题说明 You are given a tree with n nodes numbered from 0 to n-1 in the form of a parent array where parent[i] is the parent of node i. The root of the tree is node 0. Implement the function getKthAncestor(int node, int k) to return the k-th ancestor of the given node. If there is no such ancestor, return -1. The k-th ancestor of a tree"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jingxi&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jingxi&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">1483. Kth Ancestor of a Tree Node-一个树结点的第K个祖先</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-06-25 </span>
+        <div class="post-category">
+            <a href="/categories/leetcode/"> LeetCode </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#问题说明">问题说明</a></li>
+    <li><a href="#解法">解法</a></li>
+    <li><a href="#复杂度">复杂度</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="问题说明">问题说明</h2>
+<blockquote>
+<p>You are given a tree with <code>n</code> nodes numbered from <code>0</code> to <code>n-1</code> in the form of a parent array where <code>parent[i]</code> is the parent of node <code>i</code>. The root of the tree is node <code>0</code>.</p>
+<p>Implement the function <code>getKthAncestor(int node, int k)</code> to return the <code>k</code>-th ancestor of the given <code>node</code>. If there is no such ancestor, return <code>-1</code>.</p>
+<p>The <em>k-th ancestor</em> of a tree node is the <code>k</code>-th node in the path from that node to the root.</p>
+<blockquote>
+<p><strong>Examples:</strong></p>
+<p><img src="/images/lc1483-1.png" alt="image"></p>
+<p><strong>Input:</strong></p>
+<p>[&ldquo;TreeAncestor&rdquo;,&ldquo;getKthAncestor&rdquo;,&ldquo;getKthAncestor&rdquo;,&ldquo;getKthAncestor&rdquo;]</p>
+<p>[[7,[-1,0,0,1,1,2,2]],[3,1],[5,2],[6,3]]</p>
+<p><strong>Output:</strong></p>
+<p>[null,1,0,-1]</p>
+</blockquote>
+</blockquote>
+<p>这道题目给定一个常量代表树结点的个数，一个数组表示层次遍历每个树结点的祖先节点，从而来实现构造函数。然后，实现<code>getKthAncestor(int node, int k)</code>方法，要求返回结点<code>node</code>从父亲结点作为第1个开始数的第<code>k</code>个结点。</p>
+<h2 id="解法">解法</h2>
+<p>首先，看清楚这里定义的为树，并<em>没有说明为二叉树</em>，因此父亲节点可以有两个及以上的孩子结点。又该树一定为完全树，所以这棵树高度最大为$log_2n+1$。</p>
+<p>显然，在构造函数中需要数据结构的辅助，这里需要用一个二维数组来存储祖先，例如用<code>ancestors[height][n]</code>来存储<code>n</code>个结点的每一代祖先。在构造函数中需要将这个二维数组更新，第一代祖先对应<code>parent</code>数组，第二代祖先开始，如果结点的上一代祖先为-1那么它的祖先为-1，否则为第一代祖先的祖先，可从二维数组中找到。拿个栗子看看，下表记录了上面实例中的祖先数组，第一行代表node下标，第一列代表祖先代数，因为结点数为7，所以树最多有3层高。</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1th</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">2th</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">3th</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+</tr>
+</tbody>
+</table>
+<p>这个二维数组就像一个备忘录，记录每个结点每一代的祖先，而<code>getKthAncestor(int node, int k)</code>方法就更加简单了，直接返回<code>ancestors[k-1][node]</code>即可。</p>
+<h2 id="复杂度">复杂度</h2>
+<p><strong>时间复杂度：</strong> $O(nlogn)$</p>
+<p><strong>空间复杂度：</strong> $O(nlogn)$</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">jingxi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-06-25
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/leetcode/">LeetCode</a>
+          <a href="/tags//"></a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/ghpages_ci/">
+            <span class="next-text nav-default">HUGO&#43;Github&#43;Github Actions实现个人博客搭建和部署</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="wangyy017@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/MISSCHERYLWANG" class="iconfont icon-github" title="github"></a>
+  <a href="https://misscherylwang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jingxi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
