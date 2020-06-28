@@ -6,10 +6,19 @@
     <description>Recent content in LeetCode on Jingxi&#39;s personal blog.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 25 Jun 2020 23:46:45 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 00:25:22 +0800</lastBuildDate>
     
 	<atom:link href="https://misscherylwang.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>973.K Closest Points to Origin-与原点最近的K个点</title>
+      <link>https://misscherylwang.github.io/post/lc973/</link>
+      <pubDate>Sat, 27 Jun 2020 00:25:22 +0800</pubDate>
+      
+      <guid>https://misscherylwang.github.io/post/lc973/</guid>
+      <description>问题描述 We have a list of points on the plane. Find the K closest points to the origin (0, 0). (Here, the distance between two points on a plane is the Euclidean distance.) You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in.) Example: Input: points = [[3,3],[5,-1],[-2,4]], K = 1 Output: [[3,3]] 问</description>
+    </item>
     
     <item>
       <title>1483. Kth Ancestor of a Tree Node-一个树结点的第K个祖先</title>
