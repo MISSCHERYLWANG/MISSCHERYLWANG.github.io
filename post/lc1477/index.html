@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>973.K Closest Points to Origin-与原点最近的K个点 - Jingxi&#39;s personal blog.</title>
+  <title>1477.Find Two Non-overlapping Sub-arrays Each With Target Sum-找出两个元素和为目标数且无交集的子数组 - Jingxi&#39;s personal blog.</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="jingxi" /><meta name="description" content="问题描述 We have a list of points on the plane. Find the K closest points to the origin (0, 0). (Here, the distance between two points on a plane is the Euclidean distance.) You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in.) Example: Input: points = [[3,3],[5,-1],[-2,4]], K = 1 Output: [[3,3]] 问" /><meta name="keywords" content="Hugo, blog" />
+<meta name="author" content="jingxi" /><meta name="description" content="问题描述 Given an array of integers arr and an integer target. You have to find two non-overlapping sub-arrays of arr each with sum equal target. There can be multiple answers so you have to find an answer where the sum of the lengths of the two sub-arrays is minimum. Return the minimum sum of the lengths of the two required sub-arrays, or return -1 if you cannot" /><meta name="keywords" content="Hugo, blog" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
-<link rel="canonical" href="https://misscherylwang.github.io/post/lc973/" />
+<link rel="canonical" href="https://misscherylwang.github.io/post/lc1477/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,23 +39,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="973.K Closest Points to Origin-与原点最近的K个点" />
-<meta property="og:description" content="问题描述 We have a list of points on the plane. Find the K closest points to the origin (0, 0). (Here, the distance between two points on a plane is the Euclidean distance.) You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in.) Example: Input: points = [[3,3],[5,-1],[-2,4]], K = 1 Output: [[3,3]] 问" />
+<meta property="og:title" content="1477.Find Two Non-overlapping Sub-arrays Each With Target Sum-找出两个元素和为目标数且无交集的子数组" />
+<meta property="og:description" content="问题描述 Given an array of integers arr and an integer target. You have to find two non-overlapping sub-arrays of arr each with sum equal target. There can be multiple answers so you have to find an answer where the sum of the lengths of the two sub-arrays is minimum. Return the minimum sum of the lengths of the two required sub-arrays, or return -1 if you cannot" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://misscherylwang.github.io/post/lc973/" />
-<meta property="article:published_time" content="2020-06-27T00:25:22+08:00" />
-<meta property="article:modified_time" content="2020-06-27T00:25:22+08:00" />
-<meta itemprop="name" content="973.K Closest Points to Origin-与原点最近的K个点">
-<meta itemprop="description" content="问题描述 We have a list of points on the plane. Find the K closest points to the origin (0, 0). (Here, the distance between two points on a plane is the Euclidean distance.) You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in.) Example: Input: points = [[3,3],[5,-1],[-2,4]], K = 1 Output: [[3,3]] 问">
-<meta itemprop="datePublished" content="2020-06-27T00:25:22&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-27T00:25:22&#43;08:00" />
-<meta itemprop="wordCount" content="636">
+<meta property="og:url" content="https://misscherylwang.github.io/post/lc1477/" />
+<meta property="article:published_time" content="2020-06-28T18:04:08+08:00" />
+<meta property="article:modified_time" content="2020-06-28T18:04:08+08:00" />
+<meta itemprop="name" content="1477.Find Two Non-overlapping Sub-arrays Each With Target Sum-找出两个元素和为目标数且无交集的子数组">
+<meta itemprop="description" content="问题描述 Given an array of integers arr and an integer target. You have to find two non-overlapping sub-arrays of arr each with sum equal target. There can be multiple answers so you have to find an answer where the sum of the lengths of the two sub-arrays is minimum. Return the minimum sum of the lengths of the two required sub-arrays, or return -1 if you cannot">
+<meta itemprop="datePublished" content="2020-06-28T18:04:08&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-28T18:04:08&#43;08:00" />
+<meta itemprop="wordCount" content="443">
 
 
 
-<meta itemprop="keywords" content="LeetCode,排序," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="973.K Closest Points to Origin-与原点最近的K个点"/>
-<meta name="twitter:description" content="问题描述 We have a list of points on the plane. Find the K closest points to the origin (0, 0). (Here, the distance between two points on a plane is the Euclidean distance.) You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in.) Example: Input: points = [[3,3],[5,-1],[-2,4]], K = 1 Output: [[3,3]] 问"/>
+<meta itemprop="keywords" content="Sliding Window,动态规划," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1477.Find Two Non-overlapping Sub-arrays Each With Target Sum-找出两个元素和为目标数且无交集的子数组"/>
+<meta name="twitter:description" content="问题描述 Given an array of integers arr and an integer target. You have to find two non-overlapping sub-arrays of arr each with sum equal target. There can be multiple answers so you have to find an answer where the sum of the lengths of the two sub-arrays is minimum. Return the minimum sum of the lengths of the two required sub-arrays, or return -1 if you cannot"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -122,15 +122,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">973.K Closest Points to Origin-与原点最近的K个点</h1>
+      <h1 class="post-title">1477.Find Two Non-overlapping Sub-arrays Each With Target Sum-找出两个元素和为目标数且无交集的子数组</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-06-27 </span>
+        <span class="post-time"> 2020-06-28 </span>
         <div class="post-category">
             <a href="/categories/leetcode/"> LeetCode </a>
-            <a href="/categories/sort/"> Sort </a>
-            <a href="/categories/heap/"> Heap </a>
-            <a href="/categories/%E5%88%86%E6%B2%BB/"> 分治 </a>
+            <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"> 动态规划 </a>
             </div>
         
       </div>
@@ -142,14 +140,8 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#问题描述">问题描述</a></li>
-    <li><a href="#解法">解法</a>
-      <ul>
-        <li><a href="#解--排序">解&ndash;排序</a></li>
-        <li><a href="#解--堆">解&ndash;堆</a></li>
-        <li><a href="#解--分而治之">解&ndash;分而治之</a></li>
-      </ul>
-    </li>
-    <li><a href="#复杂度分析">复杂度分析</a></li>
+    <li><a href="#解法">解法</a></li>
+    <li><a href="#复杂度">复杂度</a></li>
   </ul>
 </nav>
   </div>
@@ -157,55 +149,24 @@
     <div class="post-content">
       <h2 id="问题描述">问题描述</h2>
 <blockquote>
-<p>We have a list of <code>points</code> on the plane.  Find the <code>K</code> closest points to the origin <code>(0, 0)</code>.</p>
-<p>(Here, the distance between two points on a plane is the Euclidean distance.)</p>
-<p>You may return the answer in any order.  The answer is guaranteed to be unique (except for the order that it is in.)</p>
+<p>Given an array of integers <code>arr</code> and an integer <code>target</code>.</p>
+<p>You have to find <strong>two non-overlapping sub-arrays</strong> of <code>arr</code> each with sum equal <code>target</code>. There can be multiple answers so you have to find an answer where the sum of the lengths of the two sub-arrays is <strong>minimum</strong>.</p>
+<p>Return the minimum sum of the lengths of the two required sub-arrays, or return <strong>-1</strong> if you cannot find such two sub-arrays.</p>
 <blockquote>
 <p><strong>Example:</strong></p>
-<p><strong>Input:</strong> points = [[3,3],[5,-1],[-2,4]], K = 1</p>
-<p><strong>Output:</strong>
-[[3,3]]</p>
+<p><strong>Input:</strong> arr = [3,1,1,1,5,1,2,1], target = 3</p>
+<p><strong>Output:</strong> 3</p>
 </blockquote>
 </blockquote>
-<p>问题很显然，就是找出与原点<code>(0,0)</code>的欧氏距离最小的<code>K</code>个点。</p>
+<p>要求找到两个不交叉的子数组，子数组元素和为给定的<code>target</code>，同时还要保证两个子数组的长度之和为最小。</p>
 <h2 id="解法">解法</h2>
-<h3 id="解--排序">解&ndash;排序</h3>
-<p>直观来看，直接将每个点与原点的欧氏距离计算出来进行排序，将每个点的距离与第K个距离相比较，小于等于它的点为要求点。这个过程需要遍历两次，第一次遍历计算出每个点的欧氏距离，然后将距离进行排序得到第K小的距离，第二次遍历计算当前点的欧氏距离，若其小于等于第K小的距离，则说明该点在结果当中。</p>
-<h3 id="解--堆">解&ndash;堆</h3>
-<p>维护一个大小为K的小根堆，如果当前堆大小未超过K，那么将当前点加入，否则按照欧氏距离大小吐出一个点。用优先队列可实现。</p>
-<h3 id="解--分而治之">解&ndash;分而治之</h3>
-<p>因为题目要求求前K小，那么从快排中获得的思路是选择一个<code>pivot</code>，将小于和大于它的元素分布在其左右，然后从左端和右端分别对元素与<code>pivot</code>比较，如果左端小于它左端指向右移一，如果右端大于它右端指向左移一，从而找到第一个与<code>pivot</code>交换位置的元素并交换。</p>
-<p>再结合分治法，第一次交换后，如果<code>pivot</code>左边元素个数小于K，就对其右边所有元素进行上述操作并寻找；如果大于就对左边所有元素重新上述操作；等于时停止。</p>
-<p>拿上面的栗子来一遍过程。</p>
-<p><img src="/images/lc973-1.png" alt="image"></p>
-<p>第一遍中，因为<code>right</code>指向的点的欧氏距离大于<code>pivot</code>，所以，<code>right</code>一直左移，直到循环结束。此时的下标刚好为0，即等于K-1，得到结果。</p>
-<h2 id="复杂度分析">复杂度分析</h2>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">time</th>
-<th align="center">space</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Sort</td>
-<td align="center">$O(NlogN)$</td>
-<td align="center">$O(N)$</td>
-</tr>
-<tr>
-<td align="center">Heap</td>
-<td align="center">$O(NlogN)$</td>
-<td align="center">$O(K)$</td>
-</tr>
-<tr>
-<td align="center">D &amp; Q</td>
-<td align="center">$O(N)/O(N^2)$</td>
-<td align="center">$O(1)$</td>
-</tr>
-</tbody>
-</table>
+<p>直观上来讲，因为两个子数组是不交叉的，所以当在<code>i</code>处和为<code>target</code>，那么应该已经知道i-1时满足元素和为<code>target</code>的子数组的最小长度。所以，我们需要一个数组<code>prefix</code>来记录最小长度，通过寻找另一个满足要求的长度与prefix的和最小来获得解。</p>
+<p>举例说明。图中的<code>start</code>表示窗口的左端，<code>i</code>表示窗口的右端。当窗口的和大于<code>target</code>时，左端要右移；小于<code>target</code>时，右端要右移；当窗口内的和为<code>target</code>时，这时如果窗口大小比目前最小的长度还小，需要更新<code>prefix</code>。同时，这时如果<code>prefix[start-1]</code>为一个非初始值时，那么要更新<code>res</code>为最小值。</p>
+<p><img src="/images/lc1477-1.png" alt="image"></p>
+<p><img src="/images/lc1477-2.png" alt="image"></p>
+<h2 id="复杂度">复杂度</h2>
+<p>时间复杂度：$O(N)$</p>
+<p>空间复杂度：$O(N)$</p>
 
     </div>
 
@@ -217,7 +178,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2020-06-27
+        2020-06-28
         
     </span>
   </p>
@@ -226,17 +187,17 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/leetcode/">LeetCode</a>
-          <a href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>
+          <a href="/tags/sliding-window/">Sliding Window</a>
+          <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/lc1477/">
+        <a class="prev" href="/post/lc1488/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">1477.Find Two Non-overlapping Sub-arrays Each With Target Sum-找出两个元素和为目标数且无交集的子数组</span>
+            <span class="prev-text nav-default">1488.Avoid Flood in The City-避免城市的洪水</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/lc1483/">
-            <span class="next-text nav-default">1483. Kth Ancestor of a Tree Node-一个树结点的第K个祖先</span>
+        <a class="next" href="/post/lc973/">
+            <span class="next-text nav-default">973.K Closest Points to Origin-与原点最近的K个点</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

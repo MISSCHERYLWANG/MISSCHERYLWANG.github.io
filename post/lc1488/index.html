@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>1488.Avoid Flood in The City-避免城市的洪水 - Jingxi&#39;s personal blog.</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="jingxi" /><meta name="description" content="问题描述 Your country has an infinite number of lakes. Initially, all the lakes are empty, but when it rains over the nth lake, the nth lake becomes full of water. If it rains over a lake which is full of water, there will be a flood. Your goal is to avoid the flood in any lake. Given an integer array rains where: rains[i] &amp;gt; 0 means there" /><meta name="keywords" content="Hugo, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
+
+
+<link rel="canonical" href="https://misscherylwang.github.io/post/lc1488/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="1488.Avoid Flood in The City-避免城市的洪水" />
+<meta property="og:description" content="问题描述 Your country has an infinite number of lakes. Initially, all the lakes are empty, but when it rains over the nth lake, the nth lake becomes full of water. If it rains over a lake which is full of water, there will be a flood. Your goal is to avoid the flood in any lake. Given an integer array rains where: rains[i] &gt; 0 means there" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://misscherylwang.github.io/post/lc1488/" />
+<meta property="article:published_time" content="2020-07-03T23:56:47+08:00" />
+<meta property="article:modified_time" content="2020-07-03T23:56:47+08:00" />
+<meta itemprop="name" content="1488.Avoid Flood in The City-避免城市的洪水">
+<meta itemprop="description" content="问题描述 Your country has an infinite number of lakes. Initially, all the lakes are empty, but when it rains over the nth lake, the nth lake becomes full of water. If it rains over a lake which is full of water, there will be a flood. Your goal is to avoid the flood in any lake. Given an integer array rains where: rains[i] &gt; 0 means there">
+<meta itemprop="datePublished" content="2020-07-03T23:56:47&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-03T23:56:47&#43;08:00" />
+<meta itemprop="wordCount" content="605">
+
+
+
+<meta itemprop="keywords" content="TreeSet,HashMap," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1488.Avoid Flood in The City-避免城市的洪水"/>
+<meta name="twitter:description" content="问题描述 Your country has an infinite number of lakes. Initially, all the lakes are empty, but when it rains over the nth lake, the nth lake becomes full of water. If it rains over a lake which is full of water, there will be a flood. Your goal is to avoid the flood in any lake. Given an integer array rains where: rains[i] &gt; 0 means there"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jingxi&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jingxi&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">1488.Avoid Flood in The City-避免城市的洪水</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-07-03 </span>
+        <div class="post-category">
+            <a href="/categories/leetcode/"> LeetCode </a>
+            <a href="/categories/hashmap/"> HashMap </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#问题描述">问题描述</a></li>
+    <li><a href="#解法">解法</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="问题描述">问题描述</h2>
+<blockquote>
+<p>Your country has an infinite number of lakes. Initially, all the lakes are empty, but when it rains over the <code>nth</code> lake, the <code>nth</code> lake becomes full of water. If it rains over a lake which is <strong>full of water</strong>, there will be a <strong>flood</strong>. Your goal is to avoid the flood in any lake.</p>
+<p>Given an integer array <code>rains</code> where:</p>
+<ul>
+<li><code>rains[i] &gt; 0</code> means there will be rains over the <code>rains[i]</code> lake.</li>
+<li><code>rains[i] == 0</code> means there are no rains this day and you can choose one lake this day and <strong>dry it</strong>.</li>
+</ul>
+<p>Return an array ans where:</p>
+<ul>
+<li><code>ans.length == rains.length</code></li>
+<li><code>ans[i] == -1</code> if <code>rains[i] &gt; 0</code>.</li>
+<li><code>ans[i]</code> is the lake you choose to dry in the <code>ith</code> day if <code>rains[i] == 0</code>.</li>
+</ul>
+<p>If there are multiple valid answers return any of them. If it is impossible to avoid flood return <strong>an empty array</strong>.</p>
+<p>Notice that if you chose to dry a full lake, it becomes empty, but if you chose to dry an empty lake, nothing changes.</p>
+<p><strong>Example1:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> rains = [1,2,0,0,2,1]</p>
+<p><strong>Output:</strong> [-1,-1,2,1,-1,-1]</p>
+</blockquote>
+<p><strong>Example2:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> rains = [1,2,0,1,2]</p>
+<p><strong>Output:</strong> []</p>
+</blockquote>
+<p><strong>Example3:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> rains = [69,0,0,0,69]</p>
+<p><strong>Output:</strong> [-1,69,1,1,-1]</p>
+</blockquote>
+</blockquote>
+<p>这道题目是说假定城市中有无数个湖，然后给定一个数组<code>rains</code>表示雨会在第<code>rains[i]</code>个湖中下雨并且充满雨水，但如果其为0代表不下雨同时可以选择一个湖晒干其中的水。如果在下次在这个湖中下雨之前湖是满的，那么洪水会吞噬这座城市，返回空数组；否则，返回一个和输入的数组大小一样的数组：如果是下雨天元素为-1，如果是晴天元素就为要晒干的湖的号数。</p>
+<h2 id="解法">解法</h2>
+<p>直觉来看，要得到正确结果，肯定要记录下雨天下在哪个湖中，也要记录下哪天晴，因为晴天可以把湖中的水全部蒸发掉。所以，当下次下到满水的湖中时，去寻找晴天中比上次下到这个湖中的那天晚的第一个晴天（也就是比那天大的最小的晴天），然后将数组中晴天的元素更新为湖编号；如果不存在这样一个晴天，就返回空数组。下到没有水的湖中对应输出-1，晴天可先对应1（随便一个数），之后再更新。</p>
+<p>记录湖编号和下雨天需要<strong>HashMap</strong>，记录晴天这里用到了Java中的<strong>TreeSet</strong>。</p>
+<p>如下图所示（图源水印）。</p>
+<p><img src="/images/lc1488-1.png" alt="image"></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">jingxi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-07-03
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/treeset/">TreeSet</a>
+          <a href="/tags/hashmap/">HashMap</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/lc1477/">
+            <span class="next-text nav-default">1477.Find Two Non-overlapping Sub-arrays Each With Target Sum-找出两个元素和为目标数且无交集的子数组</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="wangyy017@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/MISSCHERYLWANG" class="iconfont icon-github" title="github"></a>
+  <a href="https://misscherylwang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jingxi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

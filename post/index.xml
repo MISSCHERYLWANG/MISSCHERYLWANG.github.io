@@ -6,10 +6,28 @@
     <description>Recent content in Posts on Jingxi&#39;s personal blog.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 27 Jun 2020 00:25:22 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2020 23:56:47 +0800</lastBuildDate>
     
 	<atom:link href="https://misscherylwang.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>1488.Avoid Flood in The City-避免城市的洪水</title>
+      <link>https://misscherylwang.github.io/post/lc1488/</link>
+      <pubDate>Fri, 03 Jul 2020 23:56:47 +0800</pubDate>
+      
+      <guid>https://misscherylwang.github.io/post/lc1488/</guid>
+      <description>问题描述 Your country has an infinite number of lakes. Initially, all the lakes are empty, but when it rains over the nth lake, the nth lake becomes full of water. If it rains over a lake which is full of water, there will be a flood. Your goal is to avoid the flood in any lake. Given an integer array rains where: rains[i] &amp;gt; 0 means there</description>
+    </item>
+    
+    <item>
+      <title>1477.Find Two Non-overlapping Sub-arrays Each With Target Sum-找出两个元素和为目标数且无交集的子数组</title>
+      <link>https://misscherylwang.github.io/post/lc1477/</link>
+      <pubDate>Sun, 28 Jun 2020 18:04:08 +0800</pubDate>
+      
+      <guid>https://misscherylwang.github.io/post/lc1477/</guid>
+      <description>问题描述 Given an array of integers arr and an integer target. You have to find two non-overlapping sub-arrays of arr each with sum equal target. There can be multiple answers so you have to find an answer where the sum of the lengths of the two sub-arrays is minimum. Return the minimum sum of the lengths of the two required sub-arrays, or return -1 if you cannot</description>
+    </item>
     
     <item>
       <title>973.K Closest Points to Origin-与原点最近的K个点</title>
