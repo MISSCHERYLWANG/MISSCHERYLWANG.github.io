@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>918.Maximum Sum Circular Subarray-环形子数列中的最大元素和 - Jingxi&#39;s personal blog.</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="jingxi" /><meta name="description" content="问题描述 Given a circular array C of integers represented by A, find the maximum possible sum of a non-empty subarray of C. Here, a circular array means the end of the array connects to the beginning of the array. (Formally, C[i] = A[i] when 0 &amp;lt;= i &amp;lt; A.length, and C[i&#43;A.length] = C[i] when i &amp;gt;= 0.) Also, a subarray may only include each element of the" /><meta name="keywords" content="Hugo, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
+
+
+<link rel="canonical" href="https://misscherylwang.github.io/post/lc918/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="918.Maximum Sum Circular Subarray-环形子数列中的最大元素和" />
+<meta property="og:description" content="问题描述 Given a circular array C of integers represented by A, find the maximum possible sum of a non-empty subarray of C. Here, a circular array means the end of the array connects to the beginning of the array. (Formally, C[i] = A[i] when 0 &lt;= i &lt; A.length, and C[i&#43;A.length] = C[i] when i &gt;= 0.) Also, a subarray may only include each element of the" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://misscherylwang.github.io/post/lc918/" />
+<meta property="article:published_time" content="2020-07-06T17:11:15+08:00" />
+<meta property="article:modified_time" content="2020-07-06T17:11:15+08:00" />
+<meta itemprop="name" content="918.Maximum Sum Circular Subarray-环形子数列中的最大元素和">
+<meta itemprop="description" content="问题描述 Given a circular array C of integers represented by A, find the maximum possible sum of a non-empty subarray of C. Here, a circular array means the end of the array connects to the beginning of the array. (Formally, C[i] = A[i] when 0 &lt;= i &lt; A.length, and C[i&#43;A.length] = C[i] when i &gt;= 0.) Also, a subarray may only include each element of the">
+<meta itemprop="datePublished" content="2020-07-06T17:11:15&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-06T17:11:15&#43;08:00" />
+<meta itemprop="wordCount" content="1409">
+
+
+
+<meta itemprop="keywords" content="动态规划,Kadane&#39;s algorithm," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="918.Maximum Sum Circular Subarray-环形子数列中的最大元素和"/>
+<meta name="twitter:description" content="问题描述 Given a circular array C of integers represented by A, find the maximum possible sum of a non-empty subarray of C. Here, a circular array means the end of the array connects to the beginning of the array. (Formally, C[i] = A[i] when 0 &lt;= i &lt; A.length, and C[i&#43;A.length] = C[i] when i &gt;= 0.) Also, a subarray may only include each element of the"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jingxi&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jingxi&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">918.Maximum Sum Circular Subarray-环形子数列中的最大元素和</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-07-06 </span>
+        <div class="post-category">
+            <a href="/categories/leetcode/"> LeetCode </a>
+            <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"> 动态规划 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#问题描述">问题描述</a></li>
+    <li><a href="#解法">解法</a>
+      <ul>
+        <li><a href="#kadanes-algorithm">Kadane’s Algorithm</a></li>
+        <li><a href="#延展">延展</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="问题描述">问题描述</h2>
+<blockquote>
+<p>Given a <strong>circular array C</strong> of integers represented by <code>A</code>, find the maximum possible sum of a non-empty subarray of <strong>C</strong>.</p>
+<p>Here, a circular array means the end of the array connects to the beginning of the array.  (Formally, <code>C[i] = A[i]</code> when <code>0 &lt;= i &lt; A.length</code>, and <code>C[i+A.length] = C[i]</code> when <code>i &gt;= 0</code>.)</p>
+<p>Also, a subarray may only include each element of the fixed buffer <code>A</code> at most once.  (Formally, for a subarray <code>C[i], C[i+1], ..., C[j]</code>, there does not exist <code>i &lt;= k1, k2 &lt;= j</code> with <code>k1 % A.length = k2 % A.length</code>.)</p>
+<p><strong>Example1:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> [1,-2,3,-2]</p>
+<p><strong>Output:</strong> 3</p>
+</blockquote>
+<p><strong>Example2:</strong></p>
+<blockquote>
+<p><strong>Input:</strong> [3,-1,2,-1]</p>
+<p><strong>Output:</strong> 4</p>
+</blockquote>
+</blockquote>
+<p>输入的数组是循环的，也就是最后一个元素的下一个就是第一个元素。然后在这个循环的数组中找到子数组的元素之和的最大值。</p>
+<p>比如栗子1，<code>[3]</code>是元素之和最大的子数组；例2中<code>[3,-1,2]</code>或<code>[2,-1,3]</code>是元素之和最大的子数组。</p>
+<h2 id="解法">解法</h2>
+<p>在非循环的数组求子数组最大的元素之和这个问题上，主要就是求局部最大的问题，这里用到了动态规划，也就是<strong>Kadane’s Algorithm</strong>。</p>
+<h3 id="kadanes-algorithm">Kadane’s Algorithm</h3>
+<p>这个算法也是动态规划的应用。从下面这张图（<a href="https://medium.com/@rsinghal757/kadanes-algorithm-dynamic-programming-how-and-why-does-it-work-3fd8849ed73d">图源</a>）中可以看出，在这个数组中，在<code>A[4]=-1</code>和<code>A[5]=2</code>时的局部最大之间的关系为<code>local_max[5] = local_max[4] + A[5]</code>，当然这里还需要比较<code>A[5]</code>本身。所以动态方程为<code>local_max[i+1] = max(A[i+1], local_max[i] + A[i+1])</code>。</p>
+<p><img src="/images/lc918-1.png" alt="image"></p>
+<p>该算法的Java代码实现如下所示。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxSumSubarray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">local_max</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">global_max</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">;</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="n">local_max</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="n">local_max</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">local_max</span> <span class="o">&gt;</span> <span class="n">global_max</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">global_max</span> <span class="o">=</span> <span class="n">local_max</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">global_max</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="延展">延展</h3>
+<p>现在继续说明Kadane算法在这道题目中的应用。分析一下可以知道，这种循环的数组中最大子数列可以在一个数组内，也可能是在数组尾部和数组头部。第一种情况时，可以直接用Kadane算法；针对第二种情况，可以有多种解法，假设最大子数列为<code>A[0,...,i] + A[j,...,n-1]</code>，如<a href="https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass">下图</a>所示。</p>
+<p><img src="/images/lc918-2.png" alt="image"></p>
+<ol>
+<li>
+<p>求非最大子数列部分的最小值</p>
+<p>求最小值还是用Kadane算法，只不过将其中的max都替换为min。但是需要注意的是，如果<code>global_max &lt; 0</code>的话，结果就直接取<code>global_max</code>。</p>
+</li>
+<li>
+<p>最大子数列=sum-非最大子数列部分</p>
+<p>其实第一二种方法很像。都是依靠非最大子数列部分来求最大子数列，即<code>res = sum(A) - sum(A[i+1,...,j-1])</code>，那么我们可以设$B=[-A_i+1, -A_i+2,&hellip;, -A_j-1]$，所以结果就为<code>sum(A) - kanade(B)</code>。又因为所求子数列不能为空，因此结果就是<code>kanade(A[0,...,n-1])</code>、<code>sum(A)+kanade(B[0,...,n-2])</code>和<code>sum(A)+kanade(B[1,...,n-1])</code>三者最大的那个。</p>
+</li>
+<li>
+<p>先求出右部分的最大和，再加上左部分</p>
+<p>不用Kanade算法求解，直接分开求两部分，两者之和最大的就为结果。先用一数组记录从右往左遍历求i到n-1的之和最大值；然后从0开始遍历，左边元素之和加上当前记录的值之和的最大值为结果。</p>
+</li>
+<li>
+<p>使用一个固定的数组</p>
+<p>让环形数组固定下来，那么两个原数组拼接在一起即可实现环形数组中的所有情况。要求最大子数列之和，那么先用一个数组<code>sum</code>记录从<code>0</code>到<code>i</code>的数列之和，结果就为<code>max(sum[j]-sum[i])</code>并且$j-i&lt;n$（n为环形数组的大小）。</p>
+<p>这里需要一个双端队列来记录下标，希望队首保存sum小的下标，然后每次将<code>ans</code>和<code>sum[j]-sum[deque.peek()]</code>进行比较取较大值保存至<code>ans</code>。拿下图这个数组举例，具体过程结合图可理解。</p>
+<p>从1开始遍历数组<code>sum</code>，如果当前位置下标与队首的差值大于<code>n</code>，将队首元素pop；更新<code>ans</code>，方法上面说了；如果当前位置的sum比当前队尾存储下标的sum小或者相等，那么将队尾元素pop；将当前下标push到队尾。</p>
+<p><img src="/images/lc918-3.png" alt="image"></p>
+</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">jingxi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-07-06
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+          <a href="/tags/kadanes-algorithm/">Kadane&#39;s algorithm</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/lc1488/">
+            <span class="next-text nav-default">1488.Avoid Flood in The City-避免城市的洪水</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="wangyy017@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/MISSCHERYLWANG" class="iconfont icon-github" title="github"></a>
+  <a href="https://misscherylwang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jingxi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

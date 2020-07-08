@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kadane&#39;s algorithm on Jingxi&#39;s personal blog.</title>
+    <link>https://misscherylwang.github.io/tags/kadanes-algorithm/</link>
+    <description>Recent content in Kadane&#39;s algorithm on Jingxi&#39;s personal blog.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Jul 2020 17:11:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://misscherylwang.github.io/tags/kadanes-algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>918.Maximum Sum Circular Subarray-环形子数列中的最大元素和</title>
+      <link>https://misscherylwang.github.io/post/lc918/</link>
+      <pubDate>Mon, 06 Jul 2020 17:11:15 +0800</pubDate>
+      
+      <guid>https://misscherylwang.github.io/post/lc918/</guid>
+      <description>问题描述 Given a circular array C of integers represented by A, find the maximum possible sum of a non-empty subarray of C. Here, a circular array means the end of the array connects to the beginning of the array. (Formally, C[i] = A[i] when 0 &amp;lt;= i &amp;lt; A.length, and C[i+A.length] = C[i] when i &amp;gt;= 0.) Also, a subarray may only include each element of the</description>
+    </item>
+    
+  </channel>
+</rss>
